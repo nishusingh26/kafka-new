@@ -1,0 +1,4 @@
+- hosts: tag_Environment_Kafka
+  become: yes
+  roles:
+    - kafka-role
