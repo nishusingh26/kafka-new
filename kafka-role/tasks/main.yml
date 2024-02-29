@@ -11,13 +11,13 @@
     mode: 0755
     remote_src: yes
 
-  handlers:
+handlers:
   - name: Configure server.properties
     template:
       src: server.properties.j2
       dest: "{{ kafka_config_file }}"
     notify: Restart Kafka Service
-
+  
   - name: Restart Kafka Service
     ansible.builtin.systemd:
       name: kafka
