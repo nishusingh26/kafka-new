@@ -22,12 +22,6 @@
     dest: "{{ kafka_config_file }}"
   notify: Restart Kafka Service
 
-- name: Start Kafka Service
-  ansible.builtin.systemd:
-    name: kafka
-    state: started
-    enabled: yes
-
   handlers:
   - name: Restart Kafka Service
     ansible.builtin.systemd:
