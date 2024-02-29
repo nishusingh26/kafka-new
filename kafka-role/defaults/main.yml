@@ -1,0 +1,5 @@
+# defaults/main.yml
+
+kafka_home: "/opt/kafka"
+kafka_config_dir: "{{ kafka_home }}/config"
+kafka_config_file: "{{ kafka_config_dir }}/server.properties"
