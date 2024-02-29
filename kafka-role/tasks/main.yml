@@ -16,13 +16,13 @@
     remote_src: yes
     creates: "{{ kafka_home }}/bin/kafka-server-start.sh"
 
-- name: Configure server.properties
-  template:
-    src: server.properties.j2
-    dest: "{{ kafka_config_file }}"
-  notify: Restart Kafka Service
-
   handlers:
+  - name: Configure server.properties
+    template:
+      src: server.properties.j2
+      dest: "{{ kafka_config_file }}"
+    notify: Restart Kafka Service
+
   - name: Restart Kafka Service
     ansible.builtin.systemd:
       name: kafka
