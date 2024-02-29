@@ -1,0 +1,7 @@
+# templates/server.properties.j2
+
+{% raw %}
+broker.id={{ ansible_hostvars[inventory_hostname].ansible_index }}
+listeners=PLAINTEXT://{{ ansible_host }}
+advertised.listeners=PLAINTEXT://{{ ansible_host }}
+{% endraw %}
