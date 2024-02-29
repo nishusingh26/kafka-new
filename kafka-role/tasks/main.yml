@@ -17,10 +17,10 @@
       
     - name: Copy binary to /opt
       ansible.builtin.copy:
-      src: kafka_2.13-3.1.0.tgz
-      dest: /opt
-      owner: kafka
-      group: kafka
+        src: kafka_2.13-3.1.0.tgz
+        dest: /opt
+        owner: kafka
+        group: kafka
     
     - name: Extract binary
       ansible.builtin.unarchive:
